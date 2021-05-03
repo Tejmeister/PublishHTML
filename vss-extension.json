@@ -1,0 +1,44 @@
+{
+  "manifestVersion": 1,
+  "id": "publish-html",
+  "name": "Publish HTML",
+  "version": "0.0.1",
+  "publisher": "TejasParmar",
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "Publish a HTML file on a separate tab",
+  "categories": ["Azure Pipelines"],
+  "icons": {
+    "default": "images/extension-icon.png"
+  },
+  "files": [
+    {
+      "path": "publishhtml"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "build-info-tab",
+      "type": "ms.vss-build-web.build-results-tab",
+      "description": "A tab contributing to build results view",
+      "targets": ["ms.vss-build-web.build-results-view"],
+      "properties": {
+        "name": "Published HTML",
+        "uri": "infoTab.html",
+        "supportsTasks": ["fdbaabbe-2dd1-443e-a1e7-c65c84a106a3"]
+      }
+    },
+
+    {
+      "id": "publishhtmlreport",
+      "type": "ms.vss-distributed-task.task",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "properties": {
+        "name": "publishhtml"
+      }
+    }
+  ]
+}

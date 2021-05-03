@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id": "fdbaabbe-2dd1-443e-a1e7-c65c84a106a3",
+  "name": "PublishHTML",
+  "friendlyName": "Publish HTML",
+  "description": "Publishes the given HTML file on a separate tab",
+  "helpMarkDown": "",
+  "category": "Utility",
+  "author": "Tejas Parmar",
+  "version": {
+    "Major": 0,
+    "Minor": 1,
+    "Patch": 0
+  },
+  "instanceNameFormat": "Publish HTML $(samplestring)",
+  "inputs": [
+    {
+      "name": "htmlfilepath",
+      "type": "filePath",
+      "label": "HTML FilePath",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Path of the HTML file to be published"
+    }
+  ],
+  "execution": {
+    "Node10": {
+      "target": "index.js"
+    }
+  }
+}
